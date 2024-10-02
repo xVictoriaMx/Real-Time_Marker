@@ -21,10 +21,10 @@ This project utilizes OpenCV for capturing video input, processing images, and d
 
 To use Project Title, follow these steps:
 
-1. *Video Capture:* The program starts by capturing video input from a webcam using OpenCV's VideoCapture class.
-2. *Color Detection:* The function findColor(Mat img) converts the frame into HSV format and checks for specific colors. For each color, it creates a binary mask and calls getContours(Mat imgDilation) to find the contours of the detected marker.
-3. *Contour Detection:* The function getContours(Mat imgDilation) analyzes the binary image to detect contours of a specific size, which correspond to the detected marker. It then finds the bounding rectangle around the marker and returns the center point.
-4. *Drawing on Canvas:* The function drawOnCanvas() takes the points stored in upPoints and draws lines connecting the consecutive points. Each marker has a specific color from the defaultColorVals vector, and the program uses this color to draw the lines.
+1. **Video Capture:** The program starts by capturing video input from a webcam using OpenCV's VideoCapture class.
+2. **Color Detection:** The function findColor(Mat img) converts the frame into HSV format and checks for specific colors. For each color, it creates a binary mask and calls getContours(Mat imgDilation) to find the contours of the detected marker.
+3. **Contour Detection:** The function getContours(Mat imgDilation) analyzes the binary image to detect contours of a specific size, which correspond to the detected marker. It then finds the bounding rectangle around the marker and returns the center point.
+4. **Drawing on Canvas:** The function drawOnCanvas() takes the points stored in upPoints and draws lines connecting the consecutive points. Each marker has a specific color from the defaultColorVals vector, and the program uses this color to draw the lines.
 
 
 
