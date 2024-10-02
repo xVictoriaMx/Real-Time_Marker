@@ -23,7 +23,7 @@ This project utilizes OpenCV for capturing video input, processing images, and d
 
 ## **Core Logic and Functions**
 
-To use Project Title, follow these steps:
+To use Real-Time Marker Detector and Tracer, follow these steps:
 
 1. **Video Capture:** The program starts by capturing video input from a webcam using OpenCV's VideoCapture class.
 2. **Color Detection:** The function findColor(Mat img) converts the frame into HSV format and checks for specific colors. For each color, it creates a binary mask and calls getContours(Mat imgDilation) to find the contours of the detected marker.
