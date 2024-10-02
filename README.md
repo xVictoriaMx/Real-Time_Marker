@@ -1,5 +1,9 @@
 ## **Real-Time Marker Detector and Tracer**
 
+## **Project Objective**
+
+The objective of this project is to develop a real-time system that detects and tracks colored markers from a video feed, allowing users to draw dynamically on the screen based on the movement of the markers, utilizing efficient color detection and contour recognition techniques.
+
 ## **Overview**
 
 The Real-Time Marker Detector and Tracer is a computer vision application that captures video input from a webcam to detect colored markers in real-time. Once a marker is detected, the program traces its movement on the screen, using the marker's color as the ink for drawing.
