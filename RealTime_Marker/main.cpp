@@ -15,7 +15,7 @@ int selectedColorIndex = 0;
 // Values for default colors
 
 vector<vector<int>> colors{
-	{0,154,0,179,255,255},
+	{0,141,111,110,255,255},
 	{68, 72, 156, 102, 126, 255},
 	{124, 48, 117, 143, 170, 255} };
 
@@ -124,7 +124,6 @@ int main() {
 	while (true) {
 		cap.read(img);
 		flip(img, img, 1);
-
 		upPoints = findColor(img);
 		drawOnCanvas(upPoints, defaultColorVals);
 
