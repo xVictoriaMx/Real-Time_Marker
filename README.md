@@ -16,6 +16,13 @@ This project utilizes OpenCV for capturing video input, processing images, and d
  - Adjustable color ranges for detecting different marker types
  - Efficient drawing with multiple markers using different colors
 
+## **Demo**
+
+
+https://github.com/user-attachments/assets/c1bf4583-722f-4ca9-85f1-500d507932dc
+
+
+
 ## **Prerequisites**
  - OpenCV 4.x or above
  - C++ 11 or above
