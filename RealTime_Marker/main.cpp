@@ -8,6 +8,9 @@ using namespace std;
 
 Mat img;
 vector<vector<int>> upPoints;
+bool eraserMode = false;
+int selectedColorIndex = 0;
+
 
 // Values for default colors
 
@@ -92,8 +95,31 @@ void drawOnCanvas(vector<vector<int>> upPoints, vector<Scalar> defaultColorVals)
 	}
 }
 
+// Save trace on White Canvas
+
+void saveDrawing() {
+	Mat whiteCanvas = Mat::zeros(img.size(), img.type());
+	whiteCanvas.setTo(Scalar(255, 255, 255));  
+
+	for (int i = 1; i < upPoints.size(); i++) {
+		Point prevPoint(upPoints[i - 1][0], upPoints[i - 1][1]);
+		Point currPoint(upPoints[i][0], upPoints[i][1]);
+
+		if (upPoints[i][2] == upPoints[i - 1][2]) {
+			line(whiteCanvas, prevPoint, currPoint, defaultColorVals[upPoints[i][2]], 5);
+		}
+	}
+
+	imwrite("drawing.png", whiteCanvas);
+	cout << "Image saved as drawing.png" << endl;
+}
+
 int main() {
 	VideoCapture cap(0);
+	if (!cap.isOpened()) {
+		cout << "Error: Could not open webcam." << endl;
+		return -1;
+	}
 
 	while (true) {
 		cap.read(img);
@@ -103,7 +129,14 @@ int main() {
 		drawOnCanvas(upPoints, defaultColorVals);
 
 		imshow("Image", img);
-		waitKey(1);
+
+		char key = waitKey(1);
+		if (key == 's') {  
+			saveDrawing();
+		}
+		else if (key == 27) {  
+			break;
+		}
 	}
 	return 0;
 }
